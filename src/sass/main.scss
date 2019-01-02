@@ -1,0 +1,45 @@
+$black: #000;
+$body: #f7f7f7;
+$color1: #b2cad5;
+$color2: #8ea5af;
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  background-color: $body;
+}
+%commonClass {
+  border: 1px solid black;
+  margin: 0px auto;
+  padding: 20px;
+  text-align: center;
+}
+.mainContainer {
+  position: relative;
+}
+#header {
+  @extend %commonClass;
+  background-color: $color1;
+}
+
+#content {
+  min-height: 87vh;
+  display: table;
+  height: 100px;
+  width: 100%;
+  text-align: center;
+  span {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+#footer {
+  @extend %commonClass;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: $color2;
+}
