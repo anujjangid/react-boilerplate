@@ -28,3 +28,44 @@ Add `.babelrc` file on the root of your project
 2. Clone this repo using git clone https://github.com/anujjangid/react-boilerplate.git
 3. Install the dependencies using `npm install`
 4. Start your project using `npm run start`
+
+## Lifecycle Methods Overview
+```Javascript 
+componentWillMount() {
+    // used to do all the necessary prepration for the component to render
+    // never update state here
+    console.log('trigger before render');
+  }
+  componentDidMount() {
+    // All the Api call should be here
+    console.log('trigger after render');
+  }
+  componentWillReceiveProps(nextProps) {
+    // this lifecycle method is used to keep the state synced with update props
+    if (this.props.status !== nextProps.status) {
+      this.setState({
+        status: nextProps.status,
+      });
+    }
+    console.log('render if any prop value changed');
+  }
+  shouldComponentUpdate(nextProps, nextState) {
+    let checkStatus = true;
+    // return true if you want to re-render the component
+    console.log('conditionally re-render the component');
+    return checkStatus;
+  }
+  componentWillUpdate() {
+    // this lifecycle method will only trigger when shouldComponentUpdate return true
+    console.log('trigger before the re-render happen');
+  }
+  componentDidUpdate() {
+    // this lifecycle method will only trigger after the render, only when shouldComponentUpdate return true
+    console.log('trigger after the re-render happen');
+  }
+  componentWillUnmount() {
+    // Last lifecycle method used  before the component actually removed from the dom
+    // this method is used to clear all the things which are not required for the component, like timeout , session, logout
+    console.log('trigger when component is unmount');
+  }
+```
