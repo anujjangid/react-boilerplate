@@ -30,7 +30,8 @@ Add `.babelrc` file on the root of your project
 4. Start your project using `npm run start`
 
 ## Lifecycle Methods Overview
-```Javascript 
+
+```Javascript
 componentWillMount() {
     // used to do all the necessary prepration for the component to render
     // never update state here
@@ -68,4 +69,8 @@ componentWillMount() {
     // this method is used to clear all the things which are not required for the component, like timeout , session, logout
     console.log('trigger when component is unmount');
   }
+
+
+
+
 ```
